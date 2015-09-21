@@ -1,5 +1,7 @@
 package com.threepillarglobal.microservices.employee.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -29,5 +31,9 @@ public class EmployeeController {
 		return employeeRepository.findOne(employeeId);
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value="")
+	public List<Employee> getAll(){
+		return employeeRepository.findAll();
+	}
 	
 }
